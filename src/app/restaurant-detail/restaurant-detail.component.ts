@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RestaurantsService} from '../restaurants/restaurants.service';
+import {RestaurantsService} from '../restaurants.service';
 import {RESTAURANT} from '../restaurants/restaurant/restaurant.model';
 import {ActivatedRoute} from '@angular/router';
 
@@ -17,7 +17,7 @@ export class RestaurantDetailComponent implements OnInit {
 
   ngOnInit() {
     //recuperando id da URL activate.snapshot.parent['id'] TODO recupera valo via url
-    this.restaurantService.restaurantById(this.activate.snapshot.parent['id'])
+    this.restaurantService.restaurantById(this.activate.snapshot.params['id'])
       .subscribe(restaurant => this.restaurant = restaurant)
   }
 

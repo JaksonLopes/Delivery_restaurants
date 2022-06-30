@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import {RESTAURANT} from './restaurant/restaurant.model';
-import {MEAT_API} from '../app.api';
+import {RESTAURANT} from './restaurants/restaurant/restaurant.model';
+import {MEAT_API} from './app.api';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs';
-import {ErrorHandle} from '../app-error-handle';
+import {ErrorHandle} from './app-error-handle';
+import {MenuItem} from './restaurant-detail/menu-item/menu-item.model';
 
 @Injectable()
 export class RestaurantsService {
@@ -28,4 +29,10 @@ export class RestaurantsService {
       .map(response => response.json())
       .catch(ErrorHandle.handleError)
   }
+  menuOfRestaurant(id: string): Observable<MenuItem>{
+    return this.http.get(`${MEAT_API}/restaurants/${id}/menu`)
+      .map(response => response.json())
+      .catch(ErrorHandle.handleError)
+  }
+
 }
