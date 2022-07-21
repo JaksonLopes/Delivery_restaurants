@@ -21,6 +21,9 @@ import {ShoppingCartService} from './shopping-cart.service';
 import {OrderComponent} from './order/order.component';
 import {FormsModule} from '@angular/forms';
 import {InputComponent} from '../shared/input/input.component';
+import {RadioComponent} from '../shared/radio/radio.component';
+import {OrderItensComponent} from './order/order-itens/order-itens.component';
+
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import {InputComponent} from '../shared/input/input.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderComponent,
-    InputComponent
+    InputComponent,
+    RadioComponent,
+    OrderItensComponent
+
   ],
   imports: [
     BrowserModule,
